@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      //function App() {
+      //  return <h1>Hello, world!</h1>;
+      //}
+
+      const App = () => {
+        const firstName = 'Fiorella';
+        const user = {
+          firstName, // firstName: firstName
+          lastName: 'Mota',
+          avatar: 'https://i.pravatar.cc/100',
+        };
+        const fullName = (user) => user.firstName + ' ' + user.lastName;
+
+        return (
+          <> {/* <> est un fragment (une div "vide") */}
+            <h1>Hello, {fullName(user)}!</h1>
+            <img src={user.avatar} alt={user.firstName} className="avatar" style={{ borderRadius: 50 }} />
+            <h2>Il est {new Date().toLocaleTimeString()}.</h2>
+            <Welcome name="Fiorella" age={4} />
+            <Welcome name="Toto" />
+            <Welcome />
+            <Welcome name="Titi" />
+            <List peoples={[
+              { id: 1, name: 'Marina' },
+              { id: 2, name: 'Fiorella' },
+              { id: 3, name: 'Matthieu' },
+            ]} />
+            <List peoples={[
+              { id: 11, name: 'Toto' },
+              { id: 22, name: 'Titi' },
+            ]} />
+          </>
+        );
+      }
+
+      const List = ({ peoples }) => {
+        //const peoples = [
+        //  { id: 1, name: 'Marina' },
+        //  { id: 2, name: 'Fiorella' },
+        //  { id: 3, name: 'Matthieu' },
+        //];
+  
+        return (
+          <ul>
+            {peoples.map(people =>
+              <li key={people.id}>{people.name}</li>
+            )}
+          </ul>
+        )
+      }
+
+      const Welcome = ({ name, age }) => {
+        if (name == 'Titi') {
+          return null;
+        }
+
+        const start = <>Bonjour {name ? name : 'Inconnu'}</>
+
+        //if (age) {
+        //  return <h1>{start}, tu as {age} ans</h1>
+        //}
+
+        return <h1>
+          {start}
+          {age > 0 &&
+            <>, tu as {age} ans</>
+          }
+        </h1>
+      }
+
+      const container = document.getElementById('root');
+      const root = ReactDOM.createRoot(container);
+      root.render(<App />);
+      setInterval(() => root.render(<App />), 1000);
+    </script>
+    <!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      Read this page for starting a new React project with JSX:
+      https://react.dev/learn/start-a-new-react-project
+
+      Read this page for adding React with JSX to an existing project:
+      https://react.dev/learn/add-react-to-an-existing-project
+    -->
+  </body>
+</html>
