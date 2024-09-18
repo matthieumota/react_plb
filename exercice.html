@@ -154,6 +154,8 @@
                 <li key={index}>
                   {serie.name}{' '}
                   {'✨'.repeat(serie.note)} ({serie.note}) -{' '}
+                  {`${serie.episodes} épisodes`}
+                  {serie.episodes + ' épisodes'}
                   {serie.episodes} épisodes
                 </li>
               )}
@@ -220,7 +222,7 @@
           }
         ];
 
-        const Cat = ({ cat }) => cat && cat.toLowerCase() !== 'ronron' && <p>{cat}</p>;
+        const MyCat = ({ cat }) => cat !== null && cat.toLowerCase() !== 'ronron' && <p>{cat}</p>;
 
         return (
           <div>
@@ -234,10 +236,11 @@
               si son nom est différent de "Ronron" et qu'il n'est pas nul et avec la notation &&
             </p>
             {cat !== null && cat.toLowerCase() !== 'ronron' && <p>{cat}</p>}
-            <Cat cat={cat} />
-            <Cat cat="ronron" />
-            <Cat cat="çamarche" />
-            <Cat cat="0" />
+            <MyCat cat={cat} />
+            <MyCat cat="ronron" />
+            <MyCat cat="çamarche" />
+            <MyCat cat="0" />
+            <MyCat cat={null} />
             <p>
               Afficher les propriétés de chaque personne à l'aide de map
               Pour chaque personne afficher son âge de manière conditionnelle en utilisant ? et :
@@ -275,7 +278,7 @@
                     <div>
                       <p>{vegetable.warehouse.name} - {vegetable.warehouse.size}</p>
                     </div>
-                  ||
+                  || // else
                     <div>Magasin inconnu</div>
                   }
                   {!vegetable.warehouse && <div>Magasin inconnu</div>}
