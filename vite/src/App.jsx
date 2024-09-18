@@ -1,4 +1,5 @@
 import Button from './components/Button'
+import Counter from './components/Counter'
 import Wording from './components/Wording'
 
 function App() {
@@ -12,6 +13,10 @@ function App() {
       <div>
         <Wording />
       </div>
+
+      <Counter />
+      <Counter init={5} max={10} step={2} />
+      <Counter max={5} />
     </>
   )
 }
