@@ -9,12 +9,13 @@ function EventListener3() {
     alert(s)
   }
 
-  const removeLastNote = () => {
-    const newNotes = notes.slice(0, -1)
-    setNotes(newNotes)
+  const removeLastElement = () => {
+    const newNotes = notes.slice(0, -1) // On pourrait aussi écraser notes
+    setNotes(newNotes) // Asynchrone
+    // notes.filter((v, i) => i < notes.length - 1)
 
     if (newNotes.length <= 0) {
-      setTimeout(() => setNotes(Array.of(1, 2, 3, 4, 5)), 2000)
+      setTimeout(() => setNotes([1, 2, 3, 4, 5]), 2000)
     }
   }
 
@@ -34,7 +35,7 @@ function EventListener3() {
           </a>
         </p>
         {notes.map((note, index) => <p key={index}>{note}</p>)}
-        {notes.length > 0 && <button onClick={removeLastNote}>Remove</button>}
+        {notes.length > 0 && <button onClick={removeLastElement}>Remove</button>}
         {notes.length <= 0 && <h2 className="text-2xl font-bold text-green-600">Vous avez gagné</h2>}
       </div>
       <div>
