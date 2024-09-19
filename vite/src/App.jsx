@@ -1,5 +1,6 @@
 import Button from './components/Button'
 import Counter from './components/Counter'
+import List from './components/List'
 import Wording from './components/Wording'
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
       <Counter />
       <Counter init={5} max={10} step={2} />
       <Counter max={5} />
+
+      <List />
     </>
   )
 }
