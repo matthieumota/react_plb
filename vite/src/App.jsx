@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import Button from './components/Button'
+import Clock from './components/Clock'
 import Counter from './components/Counter'
 import List from './components/List'
 import Wording from './components/Wording'
@@ -7,8 +9,13 @@ import EventListener4 from './exercices/EventListener4'
 import StateChallenge from './exercices/StateChallenge'
 
 function App() {
+  const [show, setShow] = useState(true);
+
   return (
     <>
+      {show && <Clock />}
+      <Button onClick={() => setShow(!show)}>Afficher</Button>
+
       <h1>React + Vite</h1>
       <Button emoji="🐈‍⬛">Valider</Button>
       <Button emoji="🐆">Envoyer</Button>
