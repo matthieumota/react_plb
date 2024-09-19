@@ -7,6 +7,9 @@ import Wording from './components/Wording'
 import EventListener3 from './exercices/EventListener3'
 import EventListener4 from './exercices/EventListener4'
 import StateChallenge from './exercices/StateChallenge'
+import Lifecycle1 from './exercices/Lifecycle1'
+import Lifecycle2 from './exercices/Lifecycle2'
+import LifecycleChallenge from './exercices/LifecycleChallenge'
 
 function App() {
   const [show, setShow] = useState(true);
@@ -37,6 +40,13 @@ function App() {
       <EventListener3 />
       <h2 className="text-3xl font-bold mb-3">Exercice event listener 4</h2>
       <EventListener4 />
+
+      <h2 className="text-3xl font-bold mb-3">Exercice cycle de vie 1</h2>
+      <Lifecycle1 />
+      <h2 className="text-3xl font-bold mb-3">Exercice cycle de vie 2</h2>
+      <Lifecycle2 />
+      <h2 className="text-3xl font-bold mb-3">Exercice cycle de vie challenge</h2>
+      <LifecycleChallenge />
     </>
   )
 }

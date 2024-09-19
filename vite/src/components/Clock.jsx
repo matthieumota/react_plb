@@ -8,7 +8,7 @@ function Clock() {
   useEffect(() => {
     const i = setInterval(() => {
       setDate(new Date())
-      console.log(Math.random())
+      //console.log(Math.random())
     }, 1000);
 
     // Cette fonction est appelée quand le composant est
@@ -20,12 +20,12 @@ function Clock() {
 
   useEffect(() => {
     if (date.getSeconds() % 10 === 0) {
-      console.log('DING DONG', oldDate);
+      //console.log('DING DONG', oldDate);
     }
 
     return () => {
       oldDate.current = date.getSeconds(); // On garder l'ancienne date pour pouvoir l'utiliser avec le ding dong
-      console.log('AVANT', oldDate);
+      //console.log('AVANT', oldDate);
     }
   }, [date]); // A chaque mise à jour de date, on lance l'effect
 
