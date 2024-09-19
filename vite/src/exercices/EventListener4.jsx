@@ -76,7 +76,7 @@ function EventListener4() {
               <h2 className="text-xl font-bold inline-block">{vegetable.name}</h2>
               <p>{vegetable.price} €</p>
               <input type="text" value={vegetable.draftName} onChange={(event) => updateVegetableDraftName(event.target.value, index)} className="border-gray-300 rounded-md" />
-              {vegetable.draftName && <button onClick={() => changeVegetableName(index)}>Change</button>}
+              {vegetable.draftName && <button onClick={() => changeVegetableName(index)}>Changer</button>}
               <button className="bg-red-500 text-white hover:bg-red-400 duration-200"
                 onClick={() => deleteVegetable(index)}>
                 Supprimer
