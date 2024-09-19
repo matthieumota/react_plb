@@ -38,7 +38,7 @@ function LifecycleChallenge() {
       <Instructions />
       <ul>
         {factsOnCats.map((fact, index) =>
-          <li>
+          <li key={index}>
             - {fact.text}
             <button onClick={() => removeFact(index)}>X</button>
           </li>
