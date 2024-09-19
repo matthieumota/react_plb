@@ -10,6 +10,7 @@ import StateChallenge from './exercices/StateChallenge'
 import Lifecycle1 from './exercices/Lifecycle1'
 import Lifecycle2 from './exercices/Lifecycle2'
 import LifecycleChallenge from './exercices/LifecycleChallenge'
+import Ajax from './components/Ajax'
 
 function App() {
   const [show, setShow] = useState(true);
@@ -18,6 +19,8 @@ function App() {
     <>
       {show && <Clock />}
       <Button onClick={() => setShow(!show)}>Afficher</Button>
+
+      <Ajax />
 
       <h1>React + Vite</h1>
       <Button emoji="🐈‍⬛">Valider</Button>
