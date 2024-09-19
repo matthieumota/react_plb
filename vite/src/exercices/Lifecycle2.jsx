@@ -7,7 +7,7 @@ function Lifecycle2() {
   const [errorMessage, setErrorMessage] = useState('');
   const [age, setAge] = useState(0);
   const [degrees, setDegrees] = useState(0);
-  const previousDegrees = useRef();
+  const previousDegrees = useRef(0);
 
   /**
    * Cette fonction est appelée dès qu'une mise à jour du DOM est effectuée.
