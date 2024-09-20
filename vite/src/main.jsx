@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Lifecycle from './pages/Lifecycle.jsx'
 import EventListener from './pages/EventListener.jsx'
+import Movies from './pages/Movies.jsx'
+import Movie from './pages/Movie.jsx'
 
 const router = createBrowserRouter([
   {
@@ -23,8 +25,16 @@ const router = createBrowserRouter([
       },
       // { path: 'exercices/lifecycle', element: <div>Cycle de vie</div> },
       // { path: 'exercices/event-listener', element: <div>Event Listener</div> },
-      { path: 'films', element: <div>Films</div> },
-      { path: 'films/5', element: <div>Voir le film Gardfield</div> }
+      //{ path: 'films', element: <Movies /> },
+      //{ path: 'films/:id', element: <Movie /> },
+      {
+        path: 'films',
+        element: <Movies />, // Attention d'avoir un outlet dans ce composant
+        children: [
+          // { path: '', element: <Movies /> },
+          { path: ':id', element: <Movie /> },
+        ]
+      }
     ],
   }
 ])
