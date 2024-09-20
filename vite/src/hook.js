@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 function useFetch(url) {
   const [data, setData] = useState({});
@@ -23,4 +23,9 @@ function useFetch(url) {
   return { data, loading, error }
 }
 
-export { useFetch }
+function formatPrice(value) {
+  console.log(Math.random())
+  return `${value} €`
+}
+
+export { useFetch, formatPrice }

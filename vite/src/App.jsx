@@ -1,8 +1,11 @@
-import Ajax from './components/Ajax'
-import { NavLink, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import MenuLink from './components/MenuLink'
+import { useSelector } from 'react-redux'
+import { countTodo } from './store';
 
 function App() {
+  const todosLength = useSelector(countTodo);
+
   return (
     <>
       <div className="bg-slate-600">
@@ -12,6 +15,9 @@ function App() {
           <MenuLink to="/a-propos">A propos</MenuLink>
           <MenuLink to="/exercices/lifecycle">Exercices Lifecycle</MenuLink>
           <MenuLink to="/exercices/event-listener">Exercices Event listener</MenuLink>
+          <MenuLink to="/todos">Todos</MenuLink>
+
+          <strong className="text-white">{todosLength}</strong>
         </nav>
       </div>
 

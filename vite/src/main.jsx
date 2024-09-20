@@ -8,6 +8,9 @@ import Lifecycle from './pages/Lifecycle.jsx'
 import EventListener from './pages/EventListener.jsx'
 import Movies from './pages/Movies.jsx'
 import Movie from './pages/Movie.jsx'
+import { Provider } from 'react-redux'
+import { store } from './store.js'
+import Todos from './pages/Todos.jsx'
 
 const router = createBrowserRouter([
   {
@@ -34,13 +37,16 @@ const router = createBrowserRouter([
           // { path: '', element: <Movies /> },
           { path: ':id', element: <Movie /> },
         ]
-      }
+      },
+      { path: 'todos', element: <Todos /> }
     ],
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 )
