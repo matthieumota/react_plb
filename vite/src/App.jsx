@@ -11,12 +11,15 @@ import Lifecycle1 from './exercices/Lifecycle1'
 import Lifecycle2 from './exercices/Lifecycle2'
 import LifecycleChallenge from './exercices/LifecycleChallenge'
 import Ajax from './components/Ajax'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   const [show, setShow] = useState(true);
 
   return (
     <>
+      <Outlet /> {/* Charge le bon élément en fonction de la page */}
+
       {show && <Clock />}
       <Button onClick={() => setShow(!show)}>Afficher</Button>
 
