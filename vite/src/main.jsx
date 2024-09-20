@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       // { path: 'exercices/lifecycle', element: <div>Cycle de vie</div> },
       // { path: 'exercices/event-listener', element: <div>Event Listener</div> },
       { path: 'films', element: <div>Films</div> },
-      { path: 'films/garfield', element: <div>Voir le film Gardfield</div> }
+      { path: 'films/5', element: <div>Voir le film Gardfield</div> }
     ],
   }
 ])
