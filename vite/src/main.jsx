@@ -4,6 +4,8 @@ import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home.jsx'
+import Lifecycle from './pages/Lifecycle.jsx'
+import EventListener from './pages/EventListener.jsx'
 
 const router = createBrowserRouter([
   {
@@ -15,8 +17,8 @@ const router = createBrowserRouter([
       {
         path: 'exercices',
         children: [
-          { path: 'lifecycle', element: <div>Cycle de vie</div> },
-          { path: 'event-listener', element: <div>Event Listener</div> },
+          { path: 'lifecycle', element: <Lifecycle /> },
+          { path: 'event-listener', element: <EventListener /> },
         ]
       },
       // { path: 'exercices/lifecycle', element: <div>Cycle de vie</div> },
