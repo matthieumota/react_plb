@@ -28,13 +28,15 @@ function Ajax() {
 
   return (
     <>
-      <div>
-        {movies.map(movie =>
-          <div key={movie.id}>
-            <h2>{movie.title}</h2>
-            <img src={movie.poster_path} width={100} />
-          </div>
-        )}
+      <div className="max-w-screen-lg mx-auto">
+        <div className="grid grid-cols-5 gap-8">
+          {movies.map(movie =>
+            <div key={movie.id}>
+              <h2 className="truncate">{movie.title}</h2>
+              <img src={movie.poster_path} width={100} className="w-full" />
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
