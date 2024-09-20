@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Home from './pages/Home.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />, // Layout principal de la page
     children: [
-      { path: '', element: <div>Accueil</div> },
+      { path: '', element: <Home /> },
       { path: 'a-propos', element: <div>A propos</div> },
       {
         path: 'exercices',
