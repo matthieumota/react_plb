@@ -1,10 +1,11 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import Loader from '../components/Loader';
 
 function Movie() {
   const { id } = useParams(); // Je récupére l'id sur la route
+  const navigate = useNavigate(); // Permet de rediriger vers une page
   const [movie, setMovie] = useState({});
   const [loading, setLoading] = useState(false);
 
@@ -16,7 +17,19 @@ function Movie() {
     setTimeout(() => setMovie(response.data), 1500);
   }
 
+  const isLogged = () => true
+
+  // Solution 1 pour faire un "guard"
+  if (!isLogged()) {
+    return <Navigate to="/" />;
+  }
+
   useEffect(() => {
+    // Solution 2 pour faire un "guard"
+    if (!isLogged()) {
+      return navigate('/');
+    }
+
     // Le .catch pour les erreurs ou un try
     fetchMovie()
       .catch((error) => console.log(error))
