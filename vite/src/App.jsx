@@ -7,7 +7,7 @@ function App() {
     <>
       <div className="bg-slate-600">
         <nav className="max-w-screen-xl mx-auto mb-8">
-          <MenuLink to="/">Accueil</MenuLink>
+          <MenuLink className={'bg-red-500'} to="/">Accueil</MenuLink>
           <MenuLink to="/films">Films</MenuLink>
           <MenuLink to="/a-propos">A propos</MenuLink>
           <MenuLink to="/exercices/lifecycle">Exercices Lifecycle</MenuLink>
